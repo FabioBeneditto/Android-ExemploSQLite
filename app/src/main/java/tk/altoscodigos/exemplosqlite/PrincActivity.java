@@ -16,6 +16,8 @@ public class PrincActivity extends ActionBarActivity {
     }
 
     public void abreDataBase(View v){
+        if(v.getId() == R.id.btAbrirDB){
 
+        }
     }
 }
