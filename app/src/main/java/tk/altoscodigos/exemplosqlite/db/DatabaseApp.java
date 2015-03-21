@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseApp extends SQLiteOpenHelper{
 
     public static final String NM_DATABASE = "DiarioViagem";
-    public static final int VERSAO_DATABASE = 1;
+    public static final int VERSAO_DATABASE = 2;
 
     public DatabaseApp(Context context) {
         super(context, NM_DATABASE, null, VERSAO_DATABASE);
@@ -28,6 +28,7 @@ public class DatabaseApp extends SQLiteOpenHelper{
         cmd.append("imagem bytea, ");
         cmd.append("latitude real, ");
         cmd.append("longitude real, ");
+        cmd.append("dtEnvioFB timestamp, ");
         cmd.append("primary key (idLocal) ");
         cmd.append(" );");
 
@@ -36,6 +37,18 @@ public class DatabaseApp extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        switch (oldVersion){
+            case 1: upgradeParaV2(db);
+            case 3: upgradeParaV3(db);
+        }
+    }
 
+    private void upgradeParaV2(SQLiteDatabase db){
+        db.execSQL("alter table Locais add column dtEnvioFB timestamp;");
+    }
+
+    private void upgradeParaV3(SQLiteDatabase db){
+        db.execSQL("alter table Locais add column latitude real;");
+        db.execSQL("alter table Locais add column longitude real;");
     }
 }
