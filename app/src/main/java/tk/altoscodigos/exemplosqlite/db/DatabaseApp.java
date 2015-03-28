@@ -8,10 +8,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseApp extends SQLiteOpenHelper{
+public class DatabaseApp extends SQLiteOpenHelper {
 
     public static final String NM_DATABASE = "DiarioViagem";
-    public static final int VERSAO_DATABASE = 2;
+    public static final int VERSAO_DATABASE = 3;
 
     public DatabaseApp(Context context) {
         super(context, NM_DATABASE, null, VERSAO_DATABASE);
@@ -37,17 +37,19 @@ public class DatabaseApp extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        switch (oldVersion){
-            case 1: upgradeParaV2(db);
-            case 3: upgradeParaV3(db);
+        switch (oldVersion) {
+            case 1:
+                upgradeParaV2(db);
+            case 2:
+                upgradeParaV3(db);
         }
     }
 
-    private void upgradeParaV2(SQLiteDatabase db){
+    private void upgradeParaV2(SQLiteDatabase db) {
         db.execSQL("alter table Locais add column dtEnvioFB timestamp;");
     }
 
-    private void upgradeParaV3(SQLiteDatabase db){
+    private void upgradeParaV3(SQLiteDatabase db) {
         db.execSQL("alter table Locais add column latitude real;");
         db.execSQL("alter table Locais add column longitude real;");
     }

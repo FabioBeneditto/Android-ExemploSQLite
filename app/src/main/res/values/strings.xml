@@ -3,4 +3,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="ttl_abrir_database">Abrir Database</string>
+    <string name="ttl_tira_foto">Tirar Foto</string>
+    <string name="title_activity_captura_camera">CapturaCamera</string>
 </resources>
