@@ -5,4 +5,5 @@
     <string name="ttl_abrir_database">Abrir Database</string>
     <string name="ttl_tira_foto">Tirar Foto</string>
     <string name="title_activity_captura_camera">CapturaCamera</string>
+    <string name="title_activity_array_list">ArrayListActivity</string>
 </resources>

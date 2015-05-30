@@ -49,4 +49,35 @@ public class PrincActivity extends ActionBarActivity {
         Intent i = new Intent(this, CapturaCamera.class);
         startActivity(i);
     }
+
+    public void exibeListaSimples(View v) {
+        Intent i = new Intent(this, ArrayListActivity.class);
+        startActivity(i);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_exemplo, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.configurar:
+
+                break;
+            case R.id.imprimir:
+
+                break;
+            case R.id.sobre:
+
+                break;
+            case R.id.sair:
+
+                break;
+        }
+        return true;
+    }
 }
