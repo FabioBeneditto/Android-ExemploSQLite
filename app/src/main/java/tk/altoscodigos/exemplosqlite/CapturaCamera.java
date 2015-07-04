@@ -8,9 +8,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-/**
- * Created by fabio on 28/03/15.
- */
 public class CapturaCamera extends ActionBarActivity{
 
     @Override

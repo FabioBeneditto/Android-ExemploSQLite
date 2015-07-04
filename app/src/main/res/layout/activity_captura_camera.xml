@@ -4,14 +4,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="dm.feevale.br.exemplossqlite.CapturaCamera">
+    tools:context="tk.altoscodigos.exemplosqlite.CapturaCamera">
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="450dp"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
